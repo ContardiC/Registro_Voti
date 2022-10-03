@@ -5,16 +5,13 @@ import java.io.RandomAccessFile;
 public class FileOp {
     private RandomAccessFile randomAccessFile;
     public FileOp(){
-    }
-    public boolean createFile(){
-        boolean isFound=false;
         File file=new File("archivio.dat");
         try {
             randomAccessFile = new RandomAccessFile(file, "a");
-            isFound=true;
+            System.out.println("File creato");
         }catch(FileNotFoundException exc){
             exc.printStackTrace();
         }
-        return isFound;
     }
+
 }
