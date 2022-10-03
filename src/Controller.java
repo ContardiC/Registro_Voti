@@ -4,7 +4,7 @@ import java.awt.event.ActionListener;
 public class Controller {
     private View vista;
     private StudentModel model;
-
+    private FileOp fileOp;
     public Controller(View vista, StudentModel model){
         this.vista=vista;
         this.model=model;
@@ -15,7 +15,8 @@ public class Controller {
         gestoreSalvaDati=new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                fileOp=new FileOp();
+                //TODO: controllare se i campi sono vuoti
                 System.out.println("NOME: "+vista.getFirstName());
                 System.out.println("COGNOME: "+vista.getLastName());
                 System.out.println("VOTO "+vista.getVote());
