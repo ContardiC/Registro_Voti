@@ -10,7 +10,9 @@ public class StudentModel {
         this.vote=vote;
         this.date=date;
     }
+    public StudentModel(){
 
+    }
     public String getFirstName() {
         return firstName;
     }

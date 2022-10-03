@@ -29,6 +29,7 @@ public class View {
         pnlData.add(txtDate);
         finestra.add(pnlData,BorderLayout.NORTH);
         finestra.add(btnSave,BorderLayout.SOUTH);
+        //btnSave.addActionListener();
         finestra.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         finestra.setLocationRelativeTo(null);
         finestra.setSize(1280,720);
@@ -42,8 +43,17 @@ public class View {
         new View("TEST");
     }
     */
-    public void setFirstName(String firstName){
-        txtFirstName.setText(firstName);
+    public String getFirstName(){
+        return txtFirstName.getText();
+    }
+    public String getLastName(){
+        return txtLastName.getText();
+    }
+    public String getVote(){
+        return txtVote.getText();
+    }
+    public String getDate(){
+        return txtDate.getText();
     }
 
 
