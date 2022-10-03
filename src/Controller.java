@@ -15,7 +15,11 @@ public class Controller {
         gestoreSalvaDati=new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                fileOp=new FileOp();
+                try{
+                    fileOp=new FileOp();
+                }catch (Exception ed){
+                    ed.printStackTrace();
+                }
                 //TODO: controllare se i campi sono vuoti
                 System.out.println("NOME: "+vista.getFirstName());
                 System.out.println("COGNOME: "+vista.getLastName());
