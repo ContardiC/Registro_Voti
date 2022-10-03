@@ -21,7 +21,9 @@ public class Controller {
                 System.out.println("COGNOME: "+vista.getLastName());
                 System.out.println("VOTO "+vista.getVote());
                 System.out.println("DATA: "+vista.getDate());
-
+                if(fileOp.createFile()){
+                    System.out.println("File creato");
+                }
 
             }
         };
