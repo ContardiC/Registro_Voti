@@ -12,6 +12,30 @@ public class View {
     private JButton btnReset;
     private JPanel pnlData;
     private JPanel pnlbuttons;
+
+    public JTextField getTxtFirstName() {
+        return txtFirstName;
+    }
+
+
+
+    public JTextField getTxtLastName() {
+        return txtLastName;
+    }
+
+
+
+    public JTextField getTxtVote() {
+        return txtVote;
+    }
+
+
+
+    public JTextField getTxtDate() {
+        return txtDate;
+    }
+
+
     public View(String titolo){
         finestra=new JFrame(titolo);
         finestra.getContentPane().setLayout(new BorderLayout());
@@ -47,28 +71,26 @@ public class View {
     public JButton getBtnSave(){
         return btnSave;
     }
-    /*
-    public static void main(String[] args) {
-        new View("TEST");
+    public JButton getBtnReset(){
+        return btnReset;
     }
-    */
+
+
+    public JTextField getTxtSubject() {
+        return txtSubject;
+    }
+
     public String getFirstName(){
         return txtFirstName.getText();
     }
     public String getLastName(){
         return txtLastName.getText();
     }
-
-    public JTextField getTxtSubject() {
-        return txtSubject;
-    }
-
-    public void setTxtSubject(JTextField txtSubject) {
-        this.txtSubject = txtSubject;
-    }
-
     public String getVote(){
         return txtVote.getText();
+    }
+    public String getSubject(){
+        return txtSubject.getText();
     }
     public String getDate(){
         return txtDate.getText();

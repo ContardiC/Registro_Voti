@@ -23,12 +23,25 @@ public class Controller {
                 //TODO: controllare se i campi sono vuoti
                 System.out.println("NOME: "+vista.getFirstName());
                 System.out.println("COGNOME: "+vista.getLastName());
-                System.out.println("VOTO "+vista.getVote());
+                System.out.println("VOTO :"+vista.getVote());
+                System.out.println("MATERIA: "+vista.getSubject());
                 System.out.println("DATA: "+vista.getDate());
 
             }
         };
+        gestoreCancellaDati=new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                vista.getTxtFirstName().setText(" ");
+                vista.getTxtLastName().setText(" ");
+                vista.getTxtVote().setText(" ");
+                vista.getTxtSubject().setText(" ");
+                vista.getTxtDate().setText(" ");
+            }
+        };
+
         vista.getBtnSave().addActionListener(gestoreSalvaDati);
+        vista.getBtnReset().addActionListener(gestoreCancellaDati);
     }
 
 
