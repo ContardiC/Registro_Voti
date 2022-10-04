@@ -93,8 +93,8 @@ public class View {
     public String getLastName(){
         return txtLastName.getText();
     }
-    public String getVote(){
-        return txtVote.getText();
+    public double getVote(){
+        return Double.parseDouble(txtVote.getText());
     }
     public String getSubject(){
         return txtSubject.getText();

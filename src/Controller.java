@@ -1,5 +1,6 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
 public class Controller {
     private View vista;
@@ -8,6 +9,7 @@ public class Controller {
     public Controller(View vista, StudentModel model){
         this.vista=vista;
         this.model=model;
+        fileOp=new FileOp();
     }
     public void assegnaGestori(){
         ActionListener gestoreSalvaDati;
@@ -26,6 +28,13 @@ public class Controller {
                 System.out.println("VOTO :"+vista.getVote());
                 System.out.println("MATERIA: "+vista.getSubject());
                 System.out.println("DATA: "+vista.getDate());
+                StudentModel student=new StudentModel();
+                student.setFirstName(vista.getFirstName());
+                student.setLastName(vista.getLastName());
+                student.setVote(vista.getVote());
+                student.setSubject(vista.getSubject());
+                fileOp.write(student);
+
 
             }
         };

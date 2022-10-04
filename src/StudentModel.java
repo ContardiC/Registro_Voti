@@ -5,6 +5,12 @@ public class StudentModel {
     private String subject; //max 20 chars
     private String date; // dd-mm-yyyy format 10 chars
 
+    public static int RECORD_LENGHT=188;
+    public static int MAX_SIZE_FIRST_NAME=30;
+    public static int MAX_SIZE_LAST_NAME=30;
+    public static int MAX_SIZE_SUBJECT=20;
+    public static int MAX_SIZE_DATE=10;
+
     public StudentModel(String firstName,String lastName, double vote, String date,String subject){
         this.firstName=firstName;
         this.lastName=lastName;
