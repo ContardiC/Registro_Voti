@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -7,6 +8,7 @@ public class FileOp {
 
     private RandomAccessFile randomAccessFile;
     private StudentModel student;
+    private JTextArea txaShow;
     public FileOp(){
         File file=new File("archivio.dat");
         try {
@@ -59,49 +61,49 @@ public class FileOp {
 
 
     }
-    public void readAll(){
+    public void readAll(JTextArea txaShow){
+        this.txaShow=txaShow;
 
         try{
             randomAccessFile.seek(0);
             for(int i=0;i<numberOfRecords(StudentModel.RECORD_LENGHT);i++){
-
+                StringBuilder res=new StringBuilder("");
                 for(int j=0;j<StudentModel.MAX_SIZE_FIRST_NAME;j++){
                     char tmp;
                     tmp=randomAccessFile.readChar();
                     if(tmp!='\0'){
-                        System.out.print(tmp);
+                        res.append(tmp);
                     }
-
                 }
                 for(int j=0;j<StudentModel.MAX_SIZE_LAST_NAME;j++){
                     char tmp;
                     tmp=randomAccessFile.readChar();
                     if(tmp!='\0'){
-                        System.out.print(tmp);
+                        res.append(tmp);
                     }
-
                 }
                 try {
-                    randomAccessFile.readDouble();
+                    res.append(String.valueOf(randomAccessFile.readDouble()));
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
                 for(int j=0;j<StudentModel.MAX_SIZE_SUBJECT;j++){
+
                     char tmp;
                     tmp=randomAccessFile.readChar();
                     if(tmp!='\0'){
-                        System.out.print(tmp);
+                        res.append(tmp);
                     }
-
                 }
                 for(int j=0;j<StudentModel.MAX_SIZE_DATE;j++){
                     char tmp;
                     tmp=randomAccessFile.readChar();
                     if(tmp!='\0'){
-                        System.out.print(tmp);
+                        res.append(tmp);
                     }
-
                 }
+                txaShow.append(res.toString());
+                txaShow.append("\n\r");
             }
         }catch(IOException ex){
             ex.printStackTrace();

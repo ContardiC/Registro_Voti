@@ -14,6 +14,7 @@ public class Controller {
     public void assegnaGestori(){
         ActionListener gestoreSalvaDati;
         ActionListener gestoreCancellaDati;
+        ActionListener gestoreLeggiFile;
         gestoreSalvaDati=new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -47,9 +48,17 @@ public class Controller {
                 vista.getTxtDate().setText(" ");
             }
         };
+        gestoreLeggiFile=new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                fileOp.readAll(vista.getTxaShow());
+            }
+        };
+
 
         vista.getBtnSave().addActionListener(gestoreSalvaDati);
         vista.getBtnReset().addActionListener(gestoreCancellaDati);
+        vista.getBtnReadAll().addActionListener(gestoreLeggiFile);
     }
 
 

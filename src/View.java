@@ -10,8 +10,10 @@ public class View {
     private JTextField txtDate;
     private JButton btnSave;
     private JButton btnReset;
+    private JButton btnReadAll;
     private JPanel pnlData;
     private JPanel pnlbuttons;
+    private JTextArea txaShow;
     public JTextField getTxtFirstName() {
         return txtFirstName;
     }
@@ -31,8 +33,8 @@ public class View {
         finestra.getContentPane().setLayout(new BorderLayout());
         btnSave=new JButton("Salva");
         btnReset=new JButton("Reset");
-
-
+        btnReadAll=new JButton("Leggi il file");
+        txaShow=new JTextArea();
         //TODO: label per campi
         txtFirstName=new JTextField("");
         txtLastName=new JTextField("");
@@ -59,6 +61,8 @@ public class View {
         pnlbuttons.setLayout(new GridLayout());
         pnlbuttons.add(btnSave);
         pnlbuttons.add(btnReset);
+        pnlbuttons.add(btnReadAll);
+        finestra.add(txaShow,BorderLayout.CENTER);
         finestra.add(pnlbuttons,BorderLayout.SOUTH);
         finestra.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         finestra.setLocationRelativeTo(null);
@@ -71,7 +75,12 @@ public class View {
     public JButton getBtnReset(){
         return btnReset;
     }
-
+    public JButton getBtnReadAll(){
+        return btnReadAll;
+    }
+    public JTextArea getTxaShow(){
+        return txaShow;
+    }
 
     public JTextField getTxtSubject() {
         return txtSubject;
