@@ -75,6 +75,7 @@ public class FileOp {
                         res.append(tmp);
                     }
                 }
+                res.append('\t');
                 for(int j=0;j<StudentModel.MAX_SIZE_LAST_NAME;j++){
                     char tmp;
                     tmp=randomAccessFile.readChar();
@@ -82,11 +83,15 @@ public class FileOp {
                         res.append(tmp);
                     }
                 }
+                res.append('\t');
+
                 try {
                     res.append(String.valueOf(randomAccessFile.readDouble()));
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
+                res.append('\t');
+
                 for(int j=0;j<StudentModel.MAX_SIZE_SUBJECT;j++){
 
                     char tmp;
@@ -95,10 +100,13 @@ public class FileOp {
                         res.append(tmp);
                     }
                 }
+                res.append('\t');
+
                 for(int j=0;j<StudentModel.MAX_SIZE_DATE;j++){
                     char tmp;
                     tmp=randomAccessFile.readChar();
                     if(tmp!='\0'){
+                        // CHI COPIA E' UN BIRBANTELLO
                         res.append(tmp);
                     }
                 }
