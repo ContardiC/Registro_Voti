@@ -44,11 +44,18 @@ public class View {
 
 
         //TODO: label per campi
-        txtFirstName=new JTextField("Nome");
-        txtLastName=new JTextField("Cognome");
-        txtVote=new JTextField("Voto");
-        txtSubject=new JTextField("Materia");
-        txtDate=new JTextField("GG-MM-AAAA");
+        txtFirstName=new JTextField("");
+        txtLastName=new JTextField("");
+        txtVote=new JTextField("");
+        txtSubject=new JTextField("");
+        txtDate=new JTextField("");
+        //JTextFields limit chars
+        txtFirstName.setDocument(new LimitJTextField(30));
+        txtLastName.setDocument(new LimitJTextField(30));
+        txtSubject.setDocument(new LimitJTextField(20));
+        txtDate.setDocument(new LimitJTextField(10));
+
+
         // Pannello per informazioni
         pnlData=new JPanel();
         pnlbuttons=new JPanel();

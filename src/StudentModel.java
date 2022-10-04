@@ -1,9 +1,9 @@
 public class StudentModel {
-    private String firstName;
-    private String lastName;
+    private String firstName; //max 30 chars
+    private String lastName; //max 30 chars
     private double vote;
-    private String subject;
-    private String date; // dd-mm-yyyy format
+    private String subject; //max 20 chars
+    private String date; // dd-mm-yyyy format 10 chars
 
     public StudentModel(String firstName,String lastName, double vote, String date,String subject){
         this.firstName=firstName;
