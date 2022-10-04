@@ -12,25 +12,15 @@ public class View {
     private JButton btnReset;
     private JPanel pnlData;
     private JPanel pnlbuttons;
-
     public JTextField getTxtFirstName() {
         return txtFirstName;
     }
-
-
-
     public JTextField getTxtLastName() {
         return txtLastName;
     }
-
-
-
     public JTextField getTxtVote() {
         return txtVote;
     }
-
-
-
     public JTextField getTxtDate() {
         return txtDate;
     }

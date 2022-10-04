@@ -33,9 +33,8 @@ public class Controller {
                 student.setLastName(vista.getLastName());
                 student.setVote(vista.getVote());
                 student.setSubject(vista.getSubject());
+                student.setDate(vista.getDate());
                 fileOp.write(student);
-
-
             }
         };
         gestoreCancellaDati=new ActionListener() {

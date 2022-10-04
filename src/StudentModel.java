@@ -11,7 +11,7 @@ public class StudentModel {
     public static int MAX_SIZE_SUBJECT=20;
     public static int MAX_SIZE_DATE=10;
 
-    public StudentModel(String firstName,String lastName, double vote, String date,String subject){
+    public StudentModel(String firstName,String lastName, double vote, String subject, String date){
         this.firstName=firstName;
         this.lastName=lastName;
         this.vote=vote;
