@@ -2,14 +2,25 @@ public class StudentModel {
     private String firstName;
     private String lastName;
     private double vote;
+    private String subject;
     private String date; // dd-mm-yyyy format
 
-    public StudentModel(String firstName,String lastName, double vote, String date){
+    public StudentModel(String firstName,String lastName, double vote, String date,String subject){
         this.firstName=firstName;
         this.lastName=lastName;
         this.vote=vote;
+        this.subject=subject;
         this.date=date;
     }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
     public StudentModel(){
 
     }
